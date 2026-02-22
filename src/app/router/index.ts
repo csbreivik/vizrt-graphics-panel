@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import ControlPanel from "../../pages/ControlPanel.vue";
 import Output from "../../pages/Output.vue";
 
 export default createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     { path: "/", redirect: "/control" },
     { path: "/control", component: ControlPanel },
