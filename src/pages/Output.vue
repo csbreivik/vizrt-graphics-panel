@@ -17,7 +17,7 @@
 import AppShell from "../ui/components/AppShell.vue";
 import PreviewFrame from "../ui/components/PreviewFrame.vue";
 import ScorebugOutput from "../features/scorebug/ScorebugOutput.vue";
-import LowerThirdOutput from "../features/lower-third/lowerThirdOutput.vue";
+import LowerThirdOutput from "../features/lower-third/LowerThirdOutput.vue";
 import { useGameClock } from "../features/scorebug/useGameClock";
 
 useGameClock();
