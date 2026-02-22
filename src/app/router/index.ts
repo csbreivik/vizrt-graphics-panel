@@ -1,14 +1,12 @@
-import { createRouter as _createRouter, createWebHistory } from "vue-router";
-import ControlPanel from "../../pagesControlPanel.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import ControlPanel from "../../pages/ControlPanel.vue";
 import Output from "../../pages/Output.vue";
 
-export function createRouter() {
-  return _createRouter({
-    history: createWebHistory(),
-    router: [
-      { path: "/", redirect: "control" },
-      { path: "/control", component: ControlPanel },
-      { path: "/output", component: Output },
-    ],
-  });
-}
+export default createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: "/", redirect: "/control" },
+    { path: "/control", component: ControlPanel },
+    { path: "/output", component: Output },
+  ],
+});

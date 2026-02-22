@@ -1,3 +1,4 @@
+import { version } from "vue";
 import { z } from "zod";
 
 export const LowerThirdSchema = z.object({
@@ -8,8 +9,8 @@ export const LowerThirdSchema = z.object({
   isOnAir: z.boolean().default(false),
 });
 
-export const ScorebugSchema = z.object({
-  home: z / string().min(1).max(20),
+export const scorebugSchema = z.object({
+  home: z.string().min(1).max(20),
   away: z.string().min(1).max(20),
   homeScore: z.number().int().min(0).max(999),
   awayScore: z.number().int().min(0).max(999),
@@ -21,7 +22,7 @@ export const ScorebugSchema = z.object({
     .max(60 * 60 * 24), // up to 24h
 });
 
-export const ThemeScheme = z.object({
+export const ThemeSchema = z.object({
   id: z.string(),
   name: z.string(),
   fontFamily: z.string(),
@@ -29,3 +30,15 @@ export const ThemeScheme = z.object({
   bg: z.string(),
   fg: z.string(),
 });
+
+export const GraphicsStateSchema = z.object({
+  version: z.number().default(1),
+  themeId: z.string().default("classic-dark"),
+  lowerThird: LowerThirdSchema,
+  scorebug: scorebugSchema,
+});
+
+export type LowerThird = z.infer<typeof LowerThirdSchema>;
+export type scorebug = z.infer<typeof scorebugSchema>;
+export type Theme = z.infer<typeof ThemeSchema>;
+export type GraphicsState = z.infer<typeof GraphicsStateSchema>;
