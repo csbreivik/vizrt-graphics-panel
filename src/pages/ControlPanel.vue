@@ -14,7 +14,7 @@
           </FieldRow>
 
           <div class="links">
-            <a href="/output" target="_blank" rel="noreferrer"
+            <a :href="outputUrl" target="_blank" rel="noreferrer"
               >Open Output in new tab</a
             >
           </div>
@@ -55,6 +55,8 @@ useGameClock();
 
 const store = useGraphicsStore();
 const themes = THEMES;
+
+const outputUrl = `${import.meta.env.BASE_URL}output`;
 
 function onThemeChange(e: Event) {
   const id = (e.target as HTMLSelectElement).value;
