@@ -56,7 +56,7 @@ useGameClock();
 const store = useGraphicsStore();
 const themes = THEMES;
 
-const outputUrl = `${import.meta.env.BASE_URL}output`;
+const outputUrl = `${import.meta.env.BASE_URL}#/output`;
 
 function onThemeChange(e: Event) {
   const id = (e.target as HTMLSelectElement).value;
